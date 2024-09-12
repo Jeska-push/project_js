@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список студентов</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.css">
+    <script defer  src="main.js" >
+       document.addEventListener('DOMContentLoaded', function() {
+      })
+    </script>
+</head>
+<body class="body">
+  <header class="header flex">
+    <div class="container">
+      <div class="header__container">
+        <div class="header__logo">
+          <a href="#" class="logo">
+            <img src="img/logo.svg" class="logo" alt="логотип">
+          </a>
+        </div>
+        <input class="inputSearch" id="inputSearch" type="text" name="inputSearch"  placeholder="Введите запрос" pattern="^[А-Яа-яЁё\s]+$"> 
+      </div>
+    </div>
+ </header>
+ <main class="main">
+  <div class="container" id="container">
+    <div class="main__container">
+       <h1 class="page-title">Клиенты</h1>
+        <table class="table" id="table">
+         <thead class="title__thead">
+           <tr class="title__thead-row">
+              <th class="title col-1 col client-id" >ID<button type="button" class="arrow arrow1 title1" id="client-id"></button></th>
+              <th class="title col-2 col col-fio" >Фамилия Имя Отчество<button  type="button" class="btn btn-fio title1" id="fio">А-Я</button></th>
+              <th class="title col-3 col col-31" >Дата и время создания<button type="button"  class="arrow  arrow2 title1" id="dataCreate"></button></th>
+              <th class="title col-4 col col-41">Последние изменения<button type="button" class="arrow arrow3 title1" id="dataUpdate"></button></th>
+              <th class="title col-5 col" id="contacts">Контакты</th>
+              <th class="title col-6 col" id="actions">Действия</th>
+              <th class="title col-7 col" id="delete"></th>
+           </tr>
+         </thead>
+         <tbody class="list-clients" id="list-clients" >
+         </tbody>
+        </table>
+        <button class="addClient" type="button" id="addClient">Добавить клиента</button> 
+        <div class="wrapper"></div>
+        <form action="" class="form" id="formAddClients">
+          <div class="popup__addClients" id="popupAddClients" style="display:none">
+            <div class="popup__addClients-box">
+            <div class="popup__addClients-top" id="popupAddClientsTop">
+              <div class="popup__addClients-title">Новый клиент</div>
+              <div class="popup__addClients-close" id="popupAddClientsClose"></div>
+            </div>
+            <div class="input__addClients-box" id="inputAddClients">
+              <input class="input input-tel inp-marker" id="surname" type="text" name="Фамилия" placeholder="Фамилия"><span class="star-1"></span>
+              <input class="input input-tel inp-marker" id="name" type="text" name="Имя" placeholder="Имя"><span class="star-2"></span>
+              <input class="input input-tel" id="lastname" type="text" name="Отчество"placeholder="Отчество">
+            </div>
+           </div>
+            <div class="button-box" id="buttonBox">
+              <div class="input-contacts" id='inputContacts'></div>
+              <button class="button-add active" id="buttonAdd" type="button">Добавить контакт</button>
+           </div>
+              <div class="message-box" id="messageBox"></div>
+              <button class="button-add-save button" id="buttonSave" type="submit">Сохранить</button>
+              <button type="button" class="popup__add-link link">Отмена</button>
+            </div> 
+        </form>
+        <form action="" class="form1" id="formChangeClients">
+          <div class="popup__changeClients" id="popupChangeClients" style="display:none">
+            <div class="popup__changeClients-box">
+            <div class="popup__changeClients-top" id="popupChangeClientsTop">
+              <div class="popup__changeClients-title">Изменить данные<span class="popup__changeClients-id">ID: <span class="popup__changeClients-numberId" id="numberId"></span> </span></div>
+              <div class="popup__changeClients-close" id="popupChangeClientsClose"></div>
+            </div>
+            <div class="input__changeClients-box" id="inputChangeClients">
+              <div class="label-1">Фамилия <img class="img-star" src="img/star.png" alt="звездочка"></div>
+              <input class="input input-change" id="surnameChange" type="text" name="Изменить фамилию"> 
+              <div class="label-2">Имя <img class="img-star" src="img/star.png" alt="звездочка"></div>
+              <input class="input input-change" id="nameChange" type="text" name="Изменить имя">
+              <input class="input input-change" id="lastnameChange" type="text" name="Изменить отчество" placeholder="Отчество">
+            </div>
+          </div>
+            <div class="button-box button-box-change" id="buttonBox2">
+              <div class="input-contacts1" id='inputContacts1'></div>
+              <button class="button__add-change" id="buttonChange" type="button">Добавить контакт</button>
+          </div>
+              <div class="message-box" id="messageBox1"></div>
+              <button class="button__addSave-change button" type="submit" id="button__addSave-change">Сохранить</button>
+              <button type="button" class="popup__change-link link">Удалить клиента</button>
+          </div>
+        </form>
+        <div class="popup__deleteClient" id="popupDeleteClient" style="display:none">
+          <div class="popup__deleteClient-top" id="popupDeleteClientTop">
+            <div class="popup__deleteClient-title">Удалить клиента</div>
+            <div class="popup__deleteClient-close" id="popupDeleteClientClose"></div>
+          </div>  
+          <div class="popup__deleteClient-close" id="popupDeleteClientClose"></div>
+          <div class="popup__deleteClient-text">Вы действительно хотите удалить данного клиента?</div>
+          <button class="popup__deleteClient-btnDelete button" id="popup__deleteClient-btnDelete" type="button">Удалить</button>
+          <button type="button" class="popup__delete-link link">Отмена</button>
+        </div>
+      </div>
+     </div>
+   </div>
+  </main>
+ </body>
+</html>

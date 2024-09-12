@@ -1,0 +1,80 @@
+@media (max-width:992px){
+
+  .box-td{
+    display: flex;
+    flex-direction: column;
+    gap:0;
+   max-width: 104px;
+
+    
+  }
+
+  .box-td-date {
+    display: flex;
+    flex-direction: column;
+    width: 98px;
+  }
+
+  .row {
+    width: 100%;
+  }
+  .arrow2 {
+    position: absolute;
+    top: 30px;
+    left: 65px;
+  }
+  
+  .arrow3 {
+    position: absolute;
+    top: 30px;
+    left: 75px;
+  }
+  
+  .title__thead-row {
+    width: 100%;
+  }
+
+  .col-2 {
+    width: 217px; 
+  }
+
+  .col-3 {
+    width: 100px;
+    display: flex;
+  }
+
+  .col-7.title {
+
+    display: none;
+  }
+  .col-4 {
+    width: 90px;
+  }
+
+  .col-6,
+  .col-7 {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+}
+
+@media (max-width:830px){
+  .list-clients {
+    max-width: 95%;
+  
+}
+  
+  .col-2 {
+    width: 170px; 
+  }
+}
+
+@media (max-width:576px){
+  .inputSearch {
+    display: none;
+  }
+  .header__container {
+    display: flex;
+    justify-content: center;
+  }
+}
